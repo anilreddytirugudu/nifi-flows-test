@@ -18,4 +18,4 @@ curl -X POST \
     -H "Authorization: Token $3" \
    -H "Accept: application/vnd.github+json" \
      https://api.github.com/repos/$4/issues/$5/comments \
-     -d "$(jo message=update content=$(cat /github/workspace/diff.txt | sed 's/"/\\"/g' | sed ':a;N;$!ba;s/\n/\\n/g') sha=$github_hash)"
+     -d "$(jo body=$(cat /github/workspace/diff.txt | sed 's/"/\\"/g' | sed ':a;N;$!ba;s/\n/\\n/g'))"
