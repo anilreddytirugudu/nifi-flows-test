@@ -23,9 +23,9 @@ echo "{\"body\":\"$ESCAPED_OUTPUT\"}" > "$PAYLOAD_FILE"
         # '--data-binary "@$PAYLOAD_FILE"' tells curl to read the request body
         # directly from the specified file, bypassing shell argument limits.
 curl -X POST \
-     -H "Authorization: Token $GITHUB_TOKEN" \
+     -H "Authorization: Token $3" \
      -H "Accept: application/vnd.github+json" \
-     "https://api.github.com/repos/$REPO/issues/$ISSUE_NUMBER/comments" \
+     "https://api.github.com/repos/$4/issues/$5/comments" \
      --data-binary "@$PAYLOAD_FILE"
 
         # Clean up the temporary payload file after the curl request is complete.
