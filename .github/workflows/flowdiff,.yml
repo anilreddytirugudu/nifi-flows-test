@@ -31,7 +31,7 @@ jobs:
 
       # Running the diff
       - name: Datavolo Flow Diff
-        uses: anilreddytirugudu/nifi-flows-test@v0
+        uses: anilreddytirugudu/nifi-flows-test
         id: flowdiff
         with:
           flowA: 'original-code/${{ steps.files.outputs.all }}'
