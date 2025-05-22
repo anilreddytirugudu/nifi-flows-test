@@ -17,7 +17,7 @@ PAYLOAD_FILE="/tmp/github_comment_payload_$(date +%s%N).json"
 
         # Construct the JSON payload and write it to the temporary file.
         # The 'body' field contains the escaped output from your JAR.
-echo "{\"body\":\"$ESCAPED_OUTPUT\"}" > "$PAYLOAD_FILE"
+echo "{\"body\":\"$OUTPUT\"}" > "$PAYLOAD_FILE"
 
         # Make the curl POST request to the GitHub API.
         # '--data-binary "@$PAYLOAD_FILE"' tells curl to read the request body
