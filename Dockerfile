@@ -11,4 +11,5 @@ FROM eclipse-temurin:21-jre-noble
 COPY entrypoint.sh /entrypoint.sh
 COPY --from=builder /flow-diff/target/flow-diff.jar /flow-diff.jar
 
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
